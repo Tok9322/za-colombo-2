@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ZA COLOMBO | スリランカレストラン</title>
+  <meta name="description" content="本格スリランカ料理を洗練された空間で。スパイス香るカレー、フライドライス、コットゥ、紅茶まで。渋谷・表参道エリアのスリランカレストラン ZA COLOMBO。" />
+  <meta name="keywords" content="スリランカ, レストラン, カレー, スパイス, 紅茶, 渋谷, 表参道" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="ZA COLOMBO | スリランカレストラン" />
+  <meta property="og:description" content="本格スリランカ料理を洗練された空間で。スパイス香るカレーからセイロンティーまで。" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://example.com" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop" />
+  <link rel="icon" href="/assets/favicon.svg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./styles.css" />
+  <script defer src="./script.js"></script>
+
+  <!-- Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Restaurant",
+    "name": "ZA COLOMBO",
+    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "愛知県名古屋市中区大須2-1-41 塚本ビル1F",
+      "addressLocality": "名古屋市中区",
+      "addressRegion": "愛知県",
+      "addressCountry": "JP"
+    },
+    "servesCuisine": "Sri Lankan",
+    "telephone": "+81-52-123-5678",
+    "priceRange": "$$",
+    "url": "https://example.com",
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+        ],
+        "opens": "11:00",
+        "closes": "15:00"
+      },
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"
+        ],
+        "opens": "17:00",
+        "closes": "22:00"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Header -->
+  <header class="site-header" id="siteHeader">
+    <div class="container header-inner">
+      <a href="#" class="logo" aria-label="ZA COLOMBO Home">
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C7.03 2 3 6.03 3 11c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9Zm0 2c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.14-7-7 3.14-7 7-7Z" fill="currentColor"/>
+          <path d="M8.5 11.5c0-2.21 1.79-4 4-4 1.86 0 3.43 1.27 3.86 3h1.99C17.86 8.02 15.2 6 12.5 6 9.46 6 7 8.46 7 11.5S9.46 17 12.5 17c2.7 0 4.96-1.89 5.62-4.43h-2.02c-.43 1.73-2 3-3.86 3-2.21 0-3.74-1.79-3.74-4.07Z" fill="currentColor"/>
+        </svg>
+        <span>ZA COLOMBO</span>
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav" id="primaryNav">
+        <a href="#about">コンセプト</a>
+        <a href="#menu">メニュー</a>
+        <a href="#gallery">ギャラリー</a>
+        <a href="https://www.ubereats.com/jp" target="_blank" rel="noopener" class="btn btn--sm">UberEatsで注文</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="Hero">
+    <picture>
+      <source srcset="./assets/images/hero/hero-desktop.jpg" media="(min-width: 768px)">
+      <img src="./assets/images/hero/hero-mobile.jpg" alt="スリランカ料理の美しい盛り付け" loading="eager">
+    </picture>
+    <div class="hero__overlay"></div>
+    <div class="container hero__content">
+      <h1 class="display">スパイスで旅する、スリランカ</h1>
+      <p>香り立つスパイスとココナッツ。現地の食文化を大切に、旬の食材で仕立てた一皿を。</p>
+      <div class="hero__actions">
+        <a href="#menu" class="btn btn--primary">おすすめメニュー</a>
+        <a href="https://www.ubereats.com/jp" target="_blank" rel="noopener" class="btn btn--ghost">UberEatsで注文</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About / Concept -->
+  <section id="about" class="section section--about">
+    <div class="container grid two">
+      <div class="about__text">
+        <h2 class="headline">スリランカの“日常”を、大須で。</h2>
+        <p>スリランカ出身のシェフが腕をふるう、心と体にやさしい本場のスリランカ料理をご提供しています。</p>
+        <p>アーユルヴェーダの考えが根づいたスリランカの食文化では、「食べること」が健康への第一歩。
+        本場のオーガニックスパイスと香り高いハーブを絶妙に組み合わせ、体を整え、心までほっと癒すような料理をお届けします。</p>
+        <p>本場の味をそのままに、どこか懐かしく、毎日でも食べたくなるような優しい一皿を、ぜひご体感ください。</p>
+      </div>
+      <div class="about__image-wrap">
+        <img src="./assets/images/about/ayurveda-oneplate.jpg" alt="アーユルヴェーダのワンプレート" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Menu Highlights -->
+  <section id="menu" class="section section--menu">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="headline">おすすめメニュー</h2>
+        <p>色と香りで楽しむ、スリランカの定番と郷土料理。</p>
+      </div>
+      <div class="cards grid three">
+        <article class="card">
+          <img src="./assets/images/menu/lamprais-1200.jpg" 
+               srcset="./assets/images/menu/lamprais-800.jpg 800w, ./assets/images/menu/lamprais-1200.jpg 1200w, ./assets/images/menu/lamprais-1600.jpg 1600w" 
+               sizes="(min-width:980px) 33vw, (min-width:680px) 50vw, 100vw"
+               alt="ランプライス（Lamprais）" loading="lazy" />
+          <div class="card__body">
+            <h3>ランプライス - Lamprais</h3>
+            <p>バナナの葉に包まれた、スリランカの特別なごちそう。数種類のおかずとスパイスライスを包み蒸すことで、香りと旨みが凝縮します。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="./assets/images/menu/ayurveda-oneplate-1200.jpg" 
+               srcset="./assets/images/menu/ayurveda-oneplate-800.jpg 800w, ./assets/images/menu/ayurveda-oneplate-1200.jpg 1200w, ./assets/images/menu/ayurveda-oneplate-1600.jpg 1600w"
+               sizes="(min-width:980px) 33vw, (min-width:680px) 50vw, 100vw"
+               alt="アーユルヴェーダ ワンプレート" loading="lazy" />
+          <div class="card__body">
+            <h3>アーユルヴェーダ ワンプレート - Ayurveda Oneplate</h3>
+            <p>アーユルヴェーダの知恵をベースにオーガニックスパイスをふんだんに使用。一皿で体を整え、心まで満たしてくれる体にうれしいワンプレート。</p>
+          </div>
+        </article>
+        <article class="card">
+          <img src="./assets/images/menu/string-hopper-kottu-1200.jpg" 
+               srcset="./assets/images/menu/string-hopper-kottu-800.jpg 800w, ./assets/images/menu/string-hopper-kottu-1200.jpg 1200w, ./assets/images/menu/string-hopper-kottu-1600.jpg 1600w"
+               sizes="(min-width:980px) 33vw, (min-width:680px) 50vw, 100vw"
+               alt="ストリングホッパーコットゥ" loading="lazy" />
+          <div class="card__body">
+            <h3>ストリングホッパーコットゥ - String Hopper Kottu</h3>
+            <p>米粉の蒸し麺「ストリングホッパー」をスパイシーに炒めた定番家庭料理。モチモチの麺とスパイスの香りがクセになる、やみつき必至の味わいです。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Gallery -->
+  <section id="gallery" class="section section--gallery">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="headline">ギャラリー</h2>
+        <p>季節の一皿や店内の雰囲気をご紹介します。</p>
+      </div>
+      <div class="masonry">
+        <img src="./assets/images/gallery/tea-2776217_1280.jpg" alt="セイロンティー" style="aspect-ratio: 4 / 3; width: 100%; height: auto; object-fit: cover;" />
+        <img src="./assets/images/gallery/exterior-1.JPG" alt="店舗外観" style="aspect-ratio: 4 / 3; width: 100%; height: auto; object-fit: cover;" />
+        <img src="./assets/images/gallery/Interior.JPG" alt="店舗内観" style="aspect-ratio: 4 / 3; width: 100%; height: auto; object-fit: cover;" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Delivery CTA -->
+  <section class="section" aria-label="デリバリー">
+    <div class="container" style="text-align:center">
+      <h2 class="headline">ご自宅でも ZA COLOMBO を</h2>
+      <p class="small" style="margin:0 0 14px;color:var(--muted)">出来たての味をそのままお届けします。</p>
+      <a class="btn btn--primary" href="https://www.ubereats.com/jp" target="_blank" rel="noopener" aria-label="UberEatsで注文">
+        UberEatsで注文
+      </a>
+    </div>
+  </section>
+
+  <!-- Access / Map -->
+  <section class="section section--map" aria-label="アクセス">
+    <div class="container">
+      <div class="section__header">
+        <h2 class="headline">アクセス</h2>
+      </div>
+      <ul class="info" style="margin-bottom:18px">
+        <li>店名：ZA COLOMBO</li>
+        <li>住所：愛知県名古屋市中区大須2-1-41 塚本ビル1F</li>
+        <li>電話：<a href="tel:0521235678">052-123-5678</a></li>
+        <li>営業時間：
+          <div class="small" style="margin-top:6px;color:var(--muted)">
+            Lunch: 11:00 - 15:00 (L.O. 14:30)<br>
+            Dinner: 17:00 - 22:00 (L.O. 21:30)
+          </div>
+        </li>
+        <li>定休日：不定休</li>
+      </ul>
+      <div class="map-wrap">
+        <iframe title="ZA COLOMBO アクセスマップ" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1630.8984394926406!2d136.8986642283017!3d35.16168616886324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377e702d4dae5%3A0x3839677d5c7d1571!2sZA%20COLOMBO!5e0!3m2!1sja!2sjp!4v1754654947784!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <span class="logo-text">ZA COLOMBO</span>
+        <p class="small">© 2025 ZA COLOMBO Sri Lankan Restaurant</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="#about">コンセプト</a>
+        <a href="#menu">メニュー</a>
+        <a href="https://www.ubereats.com/jp" target="_blank" rel="noopener">UberEats</a>
+        <a href="#">プライバシー</a>
+      </nav>
+      <div class="footer-social">
+        <a href="#" aria-label="Instagram" class="social">Instagram</a>
+        <a href="#" aria-label="Facebook" class="social">Facebook</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
