@@ -1,252 +1,1178 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ZA COLOMBO | スリランカレストラン</title>
-  <meta name="description" content="本格スリランカ料理を洗練された空間で。スパイス香るカレー、フライドライス、コットゥ、紅茶まで。名古屋・大須エリアのスリランカレストラン ZA COLOMBO。" />
-  <meta name="keywords" content="スリランカ, レストラン, カレー, スパイス, 紅茶, 名古屋, 大須" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ZA COLOMBO | 名古屋・大須のスリランカカフェレストラン</title>
+  <meta name="description" content="名古屋・大須にあるスリランカカフェレストラン「ZA COLOMBO」。アーユルヴェーダ×オーガニックスパイスの本格カレーや、ファルーダ、マンゴーラッシーなど個性豊かなメニューをお楽しみください。" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Noto+Serif+JP:wght@400;600;700&family=Inter:wght@300;400;500&family=Noto+Sans+JP:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    /* ===================== RESET & BASE ===================== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="ZA COLOMBO | スリランカレストラン" />
-  <meta property="og:description" content="本格スリランカ料理を洗練された空間で。スパイス香るカレーからセイロンティーまで。" />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://example.com" />
-  <meta property="og:image" content="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop" />
-  <link rel="icon" href="/assets/favicon.svg" />
+    :root {
+      --bg:        #F9F9F9;
+      --bg-warm:   #FFF8F0;
+      --bg-dark:   #3A3530;
+      --primary:   #E07B39;
+      --primary-d: #C2612A;
+      --green:     #2D5A3D;
+      --green-l:   #3E7A54;
+      --text:      #2C2C2C;
+      --sub:       #7A7A7A;
+      --border:    #E8E4DF;
+      --white:     #FFFFFF;
+      --radius-sm: 12px;
+      --radius-md: 20px;
+      --radius-lg: 32px;
+      --shadow:    0 8px 40px rgba(0,0,0,0.08);
+      --shadow-md: 0 16px 60px rgba(0,0,0,0.12);
+    }
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Marcellus&display=swap" rel="stylesheet">
+    html { scroll-behavior: smooth; }
 
-  <link rel="stylesheet" href="./styles.css" />
-  <script defer src="./script.js"></script>
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Inter', 'Noto Sans JP', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <!-- Schema.org -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Restaurant",
-    "name": "ZA COLOMBO",
-    "image": "https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1600&auto=format&fit=crop",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "愛知県名古屋市中区大須2-1-41 塚本ビル1F",
-      "addressLocality": "名古屋市中区",
-      "addressRegion": "愛知県",
-      "addressCountry": "JP"
-    },
-    "servesCuisine": "Sri Lankan",
-    "priceRange": "$$",
-    "url": "https://example.com",
-    "openingHoursSpecification": [
-      {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday","Wednesday","Thursday","Friday","Saturday","Sunday"
-        ],
-        "opens": "11:00",
-        "closes": "22:00"
+    img { display: block; width: 100%; height: 100%; object-fit: cover; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
+    /* ===================== TYPOGRAPHY ===================== */
+    .serif { font-family: 'Playfair Display', 'Noto Serif JP', serif; }
+
+    .section-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--primary);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: 'Playfair Display', 'Noto Serif JP', serif;
+      font-size: clamp(28px, 5vw, 44px);
+      font-weight: 700;
+      line-height: 1.25;
+      color: var(--text);
+    }
+
+    .section-sub {
+      font-size: 15px;
+      color: var(--sub);
+      line-height: 1.8;
+      margin-top: 16px;
+    }
+
+    /* ===================== LAYOUT ===================== */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    section { padding: 100px 0; }
+
+    /* ===================== BUTTONS ===================== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.05em;
+      cursor: pointer;
+      border: none;
+      transition: all 0.3s ease;
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--primary-d);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(224,123,57,0.35);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 2px solid rgba(255,255,255,0.7);
+    }
+    .btn-outline:hover {
+      background: rgba(255,255,255,0.15);
+      transform: translateY(-2px);
+    }
+    .btn-green {
+      background: var(--green);
+      color: var(--white);
+    }
+    .btn-green:hover {
+      background: var(--green-l);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(45,90,61,0.35);
+    }
+
+    /* ===================== NAV ===================== */
+    #navbar {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 20px 0;
+      transition: background 0.4s ease, padding 0.4s ease, box-shadow 0.4s ease;
+    }
+    #navbar.scrolled {
+      background: rgba(249,249,249,0.95);
+      backdrop-filter: blur(12px);
+      padding: 14px 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.05em;
+      transition: color 0.4s;
+    }
+    #navbar.scrolled .nav-logo { color: var(--text); }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: rgba(255,255,255,0.85);
+      transition: color 0.3s;
+    }
+    #navbar.scrolled .nav-links a { color: var(--sub); }
+    .nav-links a:hover { color: var(--primary) !important; }
+
+    .nav-cta {
+      background: var(--primary);
+      color: var(--white) !important;
+      padding: 10px 22px;
+      border-radius: 50px;
+      font-size: 13px !important;
+      transition: background 0.3s, transform 0.3s !important;
+    }
+    .nav-cta:hover {
+      background: var(--primary-d);
+      transform: translateY(-1px);
+    }
+
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav-hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: background 0.4s;
+    }
+    #navbar.scrolled .nav-hamburger span { background: var(--text); }
+
+    /* ===================== HERO ===================== */
+    #hero {
+      position: relative;
+      height: 100svh;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background: url('images/menu/アーユルヴェーダカレー.webp') center/cover no-repeat;
+    }
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        135deg,
+        rgba(28,26,23,0.72) 0%,
+        rgba(28,26,23,0.4) 60%,
+        rgba(224,123,57,0.18) 100%
+      );
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255,255,255,0.12);
+      backdrop-filter: blur(8px);
+      border: 1px solid rgba(255,255,255,0.2);
+      padding: 8px 18px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 500;
+      color: rgba(255,255,255,0.9);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 28px;
+    }
+    .hero-badge::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      background: var(--primary);
+      border-radius: 50%;
+    }
+    .hero-title {
+      font-family: 'Playfair Display', 'Noto Serif JP', serif;
+      font-size: clamp(36px, 7vw, 68px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.18;
+      margin-bottom: 20px;
+    }
+    .hero-title em {
+      font-style: italic;
+      color: #F5C27A;
+    }
+    .hero-sub {
+      font-size: clamp(14px, 2vw, 17px);
+      color: rgba(255,255,255,0.8);
+      line-height: 1.8;
+      margin-bottom: 40px;
+      max-width: 480px;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .hero-scroll {
+      position: absolute;
+      bottom: 36px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: rgba(255,255,255,0.6);
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .hero-scroll-line {
+      width: 1px;
+      height: 48px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.6), transparent);
+      animation: scrollPulse 2s ease-in-out infinite;
+    }
+    @keyframes scrollPulse {
+      0%, 100% { opacity: 1; transform: scaleY(1); }
+      50% { opacity: 0.4; transform: scaleY(0.7); }
+    }
+
+    /* ===================== ABOUT ===================== */
+    #about { background: var(--bg); }
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+    .about-img-wrap {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/5;
+      box-shadow: var(--shadow-md);
+    }
+    .about-img-deco {
+      position: absolute;
+      bottom: -24px;
+      right: -24px;
+      width: 160px;
+      height: 160px;
+      background: var(--primary);
+      border-radius: 50%;
+      opacity: 0.12;
+      z-index: -1;
+    }
+    .about-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 32px;
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 16px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 500;
+      background: rgba(45,90,61,0.08);
+      color: var(--green);
+      border: 1px solid rgba(45,90,61,0.18);
+    }
+    .badge::before {
+      content: '✦';
+      font-size: 10px;
+    }
+
+    /* ===================== MENU ===================== */
+    #menu { background: var(--bg-warm); }
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 32px;
+      margin-top: 56px;
+    }
+    .menu-card {
+      background: var(--white);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      transition: transform 0.35s ease, box-shadow 0.35s ease;
+    }
+    .menu-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+    .menu-card-img {
+      aspect-ratio: 4/3;
+      overflow: hidden;
+      position: relative;
+    }
+    .menu-card-img img {
+      transition: transform 0.6s ease;
+    }
+    .menu-card:hover .menu-card-img img {
+      transform: scale(1.06);
+    }
+    .menu-card-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--primary);
+      color: var(--white);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      padding: 5px 14px;
+      border-radius: 50px;
+    }
+    .menu-card-body {
+      padding: 28px 32px 32px;
+    }
+    .menu-card-en {
+      font-family: 'Playfair Display', serif;
+      font-size: 13px;
+      color: var(--sub);
+      letter-spacing: 0.06em;
+      margin-bottom: 6px;
+    }
+    .menu-card-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+      line-height: 1.4;
+    }
+    .menu-card-desc {
+      font-size: 14px;
+      color: var(--sub);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+    .menu-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .menu-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .menu-price span {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--sub);
+      font-family: 'Inter', sans-serif;
+    }
+    .menu-info-tag {
+      font-size: 12px;
+      color: var(--green);
+      background: rgba(45,90,61,0.08);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    /* ===================== DRINKS SECTION ===================== */
+    #drinks { background: var(--bg); }
+    .drinks-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: center;
+      margin-top: 56px;
+    }
+    .drinks-img-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 3/4;
+      box-shadow: var(--shadow-md);
+    }
+    .drinks-list {
+      display: flex;
+      flex-direction: column;
+      gap: 0;
+    }
+    .drink-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .drink-item:first-child { border-top: 1px solid var(--border); }
+    .drink-name-ja {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 17px;
+      font-weight: 600;
+      color: var(--text);
+    }
+    .drink-name-en {
+      font-size: 12px;
+      color: var(--sub);
+      letter-spacing: 0.06em;
+      margin-top: 3px;
+    }
+    .drink-price {
+      font-family: 'Playfair Display', serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--primary);
+      white-space: nowrap;
+    }
+    .drink-badge {
+      display: inline-block;
+      background: #FFF3E8;
+      color: var(--primary);
+      font-size: 11px;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 50px;
+      margin-top: 4px;
+    }
+
+    /* ===================== DRINK SET BANNER ===================== */
+    #drinkset {
+      padding: 0;
+      background: var(--bg);
+    }
+    .drinkset-banner {
+      background: var(--green);
+      border-radius: var(--radius-lg);
+      margin: 0 24px;
+      padding: 56px 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      position: relative;
+      overflow: hidden;
+    }
+    .drinkset-banner::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -60px;
+      width: 300px; height: 300px;
+      background: rgba(255,255,255,0.04);
+      border-radius: 50%;
+    }
+    .drinkset-banner::after {
+      content: '';
+      position: absolute;
+      bottom: -80px; left: 40%;
+      width: 200px; height: 200px;
+      background: rgba(255,255,255,0.03);
+      border-radius: 50%;
+    }
+    .drinkset-text .label {
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 12px;
+    }
+    .drinkset-title {
+      font-family: 'Playfair Display', 'Noto Serif JP', serif;
+      font-size: clamp(22px, 3vw, 34px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .drinkset-title strong {
+      color: #F5C27A;
+    }
+    .drinkset-drinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 16px;
+    }
+    .drinkset-drinks span {
+      font-size: 12px;
+      color: rgba(255,255,255,0.75);
+      background: rgba(255,255,255,0.1);
+      padding: 4px 12px;
+      border-radius: 50px;
+    }
+
+    /* ===================== ACCESS ===================== */
+    #access { background: var(--bg-warm); }
+    .access-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 56px;
+      align-items: start;
+      margin-top: 56px;
+    }
+    .map-wrap {
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      aspect-ratio: 4/3;
+    }
+    .map-wrap iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+    .access-info { padding-top: 8px; }
+    .info-block {
+      display: flex;
+      gap: 20px;
+      padding: 24px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .info-block:first-child { padding-top: 0; }
+    .info-icon {
+      width: 44px;
+      height: 44px;
+      background: rgba(224,123,57,0.1);
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--primary);
+      font-size: 20px;
+    }
+    .info-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--sub);
+      margin-bottom: 6px;
+    }
+    .info-value {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--text);
+      line-height: 1.6;
+    }
+    .info-value .closed {
+      color: #C0392B;
+      font-weight: 600;
+    }
+    .access-cta {
+      margin-top: 32px;
+    }
+
+    /* ===================== FOOTER ===================== */
+    footer {
+      background: var(--bg-dark);
+      color: rgba(255,255,255,0.7);
+      padding: 60px 0 32px;
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 24px;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--white);
+      letter-spacing: 0.08em;
+    }
+    .footer-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+    .footer-divider {
+      width: 40px;
+      height: 1px;
+      background: rgba(255,255,255,0.15);
+      margin: 4px auto;
+    }
+    .footer-info {
+      font-size: 14px;
+      line-height: 1.9;
+      color: rgba(255,255,255,0.55);
+    }
+    .footer-copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.25);
+      margin-top: 16px;
+      padding-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      width: 100%;
+      text-align: center;
+    }
+
+    /* ===================== INTERIOR BANNER ===================== */
+    #interior {
+      padding: 0;
+      position: relative;
+      height: 480px;
+      overflow: hidden;
+    }
+    .interior-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      transition: transform 8s ease;
+    }
+    #interior:hover .interior-img {
+      transform: scale(1.04);
+    }
+    .interior-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to right,
+        rgba(28,26,23,0.75) 0%,
+        rgba(28,26,23,0.35) 50%,
+        rgba(28,26,23,0.15) 100%
+      );
+    }
+    .interior-content {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+    }
+    .interior-text {
+      max-width: 480px;
+      padding: 0 48px;
+    }
+    .interior-label {
+      font-size: 11px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.55);
+      margin-bottom: 16px;
+    }
+    .interior-title {
+      font-family: 'Playfair Display', 'Noto Serif JP', serif;
+      font-size: clamp(24px, 3.5vw, 40px);
+      font-weight: 700;
+      color: var(--white);
+      line-height: 1.3;
+      margin-bottom: 16px;
+    }
+    .interior-sub {
+      font-size: 14px;
+      color: rgba(255,255,255,0.7);
+      line-height: 1.8;
+    }
+
+    /* ===================== SCROLL ANIMATIONS ===================== */
+    .fade-up {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-up.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-up-delay-1 { transition-delay: 0.1s; }
+    .fade-up-delay-2 { transition-delay: 0.2s; }
+    .fade-up-delay-3 { transition-delay: 0.3s; }
+    .fade-up-delay-4 { transition-delay: 0.4s; }
+
+    /* ===================== RESPONSIVE ===================== */
+    @media (max-width: 900px) {
+      section { padding: 72px 0; }
+      .about-grid,
+      .drinks-layout,
+      .access-grid { grid-template-columns: 1fr; gap: 40px; }
+      .about-img-wrap { aspect-ratio: 16/9; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .drinkset-banner {
+        flex-direction: column;
+        padding: 40px 32px;
+        text-align: center;
       }
-    ]
-  }
-  </script>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-3NDQ13P7B5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-3NDQ13P7B5');
-  </script>
+      .nav-links { display: none; }
+      .nav-hamburger { display: flex; }
+      .drinks-img-wrap { aspect-ratio: 16/9; }
+    }
+
+    @media (max-width: 600px) {
+      .container { padding: 0 20px; }
+      .drinkset-banner { margin: 0 20px; padding: 36px 24px; }
+      .hero-btns { flex-direction: column; }
+      .btn { justify-content: center; }
+      .map-wrap { aspect-ratio: 1/1; }
+    }
+  </style>
 </head>
 <body>
-  <!-- Header -->
-  <header class="site-header" id="siteHeader">
-    <div class="container header-inner">
-      <a href="#" class="logo" aria-label="ZA COLOMBO Home">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-          <path d="M12 2C7.03 2 3 6.03 3 11c0 4.97 4.03 9 9 9s9-4.03 9-9c0-4.97-4.03-9-9-9Zm0 2c3.86 0 7 3.14 7 7s-3.14 7-7 7-7-3.14-7-7 3.14-7 7-7Z" fill="currentColor"/>
-          <path d="M8.5 11.5c0-2.21 1.79-4 4-4 1.86 0 3.43 1.27 3.86 3h1.99C17.86 8.02 15.2 6 12.5 6 9.46 6 7 8.46 7 11.5S9.46 17 12.5 17c2.7 0 4.96-1.89 5.62-4.43h-2.02c-.43 1.73-2 3-3.86 3-2.21 0-3.74-1.79-3.74-4.07Z" fill="currentColor"/>
-        </svg>
-        <span>ZA COLOMBO</span>
-      </a>
 
-      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
+  <!-- ========== NAVBAR ========== -->
+  <nav id="navbar">
+    <div class="container">
+      <div class="nav-inner">
+        <a href="#" class="nav-logo">ZA COLOMBO</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#drinks">Drinks</a></li>
+          <li><a href="#access" class="nav-cta">アクセス</a></li>
+        </ul>
+        <div class="nav-hamburger" id="hamburger" role="button" aria-label="メニューを開く">
+          <span></span><span></span><span></span>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-      <nav class="nav" id="primaryNav">
-        <a href="#about">コンセプト</a>
-        <a href="#menu">メニュー</a>
-        <a href="#gallery">ギャラリー</a>
-        <a href="https://www.ubereats.com/jp/store/%E3%82%B5%E3%80%82%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%9B-%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3-the-colombo-srilankan-restaurant/G0wdS591S9yXFTJcmyQX0g?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNiVBMCU4NCVFRiVCQyU5NCVFNCVCOCU4MSVFNyU5QiVBRSVFRiVCQyU5NSVFMiU4OCU5MiVFRiVCQyU5NiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpCNWZtZDlCd0EyQVJucnZuRTZMOUNmTSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzNS4xNjkwNTQxJTJDJTIybG9uZ2l0dWRlJTIyJTNBMTM2LjkxMjUyMTElN0Q%3D&ps=1&surfaceName=" target="_blank" rel="noopener" class="order-link" aria-label="UberEatsで注文">
-          <img src="./assets/images/logos/ubereats-logo-h-black-on-white.png" alt="UberEatsで注文" />
+  <!-- ========== HERO ========== -->
+  <section id="hero" aria-label="ヒーローセクション">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">Sri Lankan Café Restaurant · Nagoya Osu</div>
+        <h1 class="hero-title">
+          スパイスの香りに<br />
+          包まれた、<em>一皿</em>。
+        </h1>
+        <p class="hero-sub">
+          アーユルヴェーダ×オーガニックスパイスが織りなす、<br />
+          スリランカ本場の食卓を名古屋・大須でお届けします。
+        </p>
+        <div class="hero-btns">
+          <a href="#menu" class="btn btn-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>
+            メニューを見る
+          </a>
+          <a href="#access" class="btn btn-outline">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            アクセスはこちら
+          </a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <div class="hero-scroll-line"></div>
+      <span>Scroll</span>
+    </div>
+  </section>
+
+  <!-- ========== ABOUT ========== -->
+  <section id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-img-wrap fade-up">
+          <img src="images/menu/プロ仕上げビリヤニ.webp" alt="スリランカの伝統料理 ビリヤニ" loading="lazy" />
+          <div class="about-img-deco"></div>
+        </div>
+        <div>
+          <p class="section-label fade-up">About ZA COLOMBO</p>
+          <h2 class="section-title fade-up fade-up-delay-1">
+            大須から届ける、<br />
+            本物のスリランカ。
+          </h2>
+          <p class="section-sub fade-up fade-up-delay-2">
+            「ZA COLOMBO」は、スリランカ料理とカフェ文化が融合した名古屋・大須のレストランです。<br /><br />
+            アーユルヴェーダの知恵とオーガニックスパイスを活かした日替わりカレーは10品以上。バナナの葉に包まれたランプライスや、鉄板で炒めたコッターなど、現地の食文化をそのままお届けします。
+          </p>
+          <div class="about-badges fade-up fade-up-delay-3">
+            <span class="badge">アーユルヴェーダ</span>
+            <span class="badge">オーガニックスパイス</span>
+            <span class="badge">日替わりカレー</span>
+            <span class="badge">本格スリランカ料理</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== MENU ========== -->
+  <section id="menu">
+    <div class="container">
+      <div style="text-align:center; max-width:600px; margin:0 auto;">
+        <p class="section-label fade-up">Signature Menu</p>
+        <h2 class="section-title fade-up fade-up-delay-1">看板メニュー</h2>
+        <p class="section-sub fade-up fade-up-delay-2">
+          スリランカの食文化が凝縮された、ZA COLOMBOの自慢の一皿たち。
+        </p>
+      </div>
+
+      <div class="menu-grid">
+
+        <!-- Card 1 -->
+        <div class="menu-card fade-up">
+          <div class="menu-card-img">
+            <img src="images/menu/アーユルヴェーダカレー.webp" alt="アーユルヴェーダ スペシャルセット" loading="lazy" />
+            <span class="menu-card-tag">★ 人気No.1</span>
+          </div>
+          <div class="menu-card-body">
+            <p class="menu-card-en">Ayurvedic Special Set</p>
+            <h3 class="menu-card-name">アーユルヴェーダ<br />スペシャルセット</h3>
+            <p class="menu-card-desc">アーユルヴェーダ×オーガニックスパイスの日替わりカレー10品以上。混ぜて食べると、さらにおいしさが広がります。サラダ付き。</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">¥1,500 <span>（税込）</span></div>
+              <span class="menu-info-tag">ドリンク +¥200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="menu-card fade-up fade-up-delay-1">
+          <div class="menu-card-img">
+            <img src="images/menu/ランプライス_ダークウォールナット版.webp" alt="アーユルヴェーダ スペシャル ランプライス" loading="lazy" />
+            <span class="menu-card-tag">バナナの葉包み</span>
+          </div>
+          <div class="menu-card-body">
+            <p class="menu-card-en">Ayurvedic Special Lamprice</p>
+            <h3 class="menu-card-name">アーユルヴェーダ<br />スペシャル ランプライス</h3>
+            <p class="menu-card-desc">バナナの葉に包まれた、まさにスリランカの食文化が詰まった逸品。カレー10品以上。サラダ付き。</p>
+            <div class="menu-card-footer">
+              <div class="menu-price">¥1,600 <span>（税込）</span></div>
+              <span class="menu-info-tag">ドリンク +¥200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="menu-card fade-up fade-up-delay-2">
+          <div class="menu-card-img">
+            <img src="images/menu/フライドライス.webp" alt="フライドライス" loading="lazy" />
+            <span class="menu-card-tag">スリランカ炒飯</span>
+          </div>
+          <div class="menu-card-body">
+            <p class="menu-card-en">Fried Rice</p>
+            <h3 class="menu-card-name">フライドライス</h3>
+            <p class="menu-card-desc">100%オーガニックスパイスで仕上げたスリランカチャーハン。チキンとシーフードの2種からお選びいただけます。サラダ付き。</p>
+            <div class="menu-card-footer">
+              <div>
+                <div class="menu-price">¥1,500〜 <span>（税込）</span></div>
+                <div style="font-size:12px; color:var(--sub); margin-top:2px;">チキン ¥1,500 / シーフード ¥1,800</div>
+              </div>
+              <span class="menu-info-tag">ドリンク +¥200</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Card 4 — Other Menus -->
+        <div class="menu-card fade-up fade-up-delay-3" style="background: linear-gradient(135deg, #1C1A17 0%, #2D3A2E 100%); color: #fff;">
+          <div style="padding: 32px; display:flex; flex-direction:column; height:100%; justify-content:space-between;">
+            <div>
+              <p style="font-size:11px; letter-spacing:0.2em; text-transform:uppercase; color:rgba(255,255,255,0.45); margin-bottom:16px;">Other Menu</p>
+              <h3 style="font-family:'Playfair Display',serif; font-size:26px; font-weight:700; color:#fff; margin-bottom:24px; line-height:1.3;">他にも<br />充実のラインナップ</h3>
+              <div style="display:flex; flex-direction:column; gap:0;">
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">
+                  <span style="color:rgba(255,255,255,0.85);">ドルフィン コッター</span>
+                  <span style="color:#F5C27A; font-family:'Playfair Display',serif; font-size:18px; font-weight:700;">¥1,500</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">
+                  <span style="color:rgba(255,255,255,0.85);">チキンビリヤニ</span>
+                  <span style="color:#F5C27A; font-family:'Playfair Display',serif; font-size:18px; font-weight:700;">¥1,600</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; border-bottom:1px solid rgba(255,255,255,0.1); font-size:15px;">
+                  <span style="color:rgba(255,255,255,0.85);">マトンビリヤニ</span>
+                  <span style="color:#F5C27A; font-family:'Playfair Display',serif; font-size:18px; font-weight:700;">¥1,800</span>
+                </div>
+                <div style="display:flex; justify-content:space-between; align-items:center; padding:14px 0; font-size:15px;">
+                  <span style="color:rgba(255,255,255,0.85);">デビルチキン</span>
+                  <span style="color:#F5C27A; font-family:'Playfair Display',serif; font-size:18px; font-weight:700;">¥1,000</span>
+                </div>
+              </div>
+            </div>
+            <p style="font-size:12px; color:rgba(255,255,255,0.4); margin-top:24px;">※全て税込価格 / サラダ付き</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== INTERIOR ========== -->
+  <div id="interior">
+    <img
+      src="images/menu/店舗内観.webp"
+      alt="ZA COLOMBO 店内の雰囲気"
+      class="interior-img"
+      loading="lazy"
+    />
+    <div class="interior-overlay"></div>
+    <div class="interior-content">
+      <div class="container">
+        <div class="interior-text fade-up">
+          <p class="interior-label">Our Space</p>
+          <h2 class="interior-title">
+            スリランカの空気が流れる、<br />大須の居場所。
+          </h2>
+          <p class="interior-sub">
+            アートに彩られた空間で、スパイスの余韻とともにくつろぎの時間をお過ごしください。
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== DRINKS ========== -->
+  <section id="drinks">
+    <div class="container">
+      <div style="max-width:600px;">
+        <p class="section-label fade-up">Drinks & Sweets</p>
+        <h2 class="section-title fade-up fade-up-delay-1">ドリンク & スイーツ</h2>
+        <p class="section-sub fade-up fade-up-delay-2">
+          スリランカの彩りをそのままグラスに。食事の後もゆっくりとお寛ぎください。
+        </p>
+      </div>
+
+      <div class="drinks-layout">
+        <div class="drinks-img-wrap fade-up">
+          <img src="images/menu/faluda.webp" alt="ファルーダ — スリランカの彩りあるスイーツドリンク" loading="lazy" />
+        </div>
+        <div class="drinks-list fade-up fade-up-delay-2">
+          <div class="drink-item">
+            <div>
+              <div class="drink-name-ja">ファルーダ</div>
+              <div class="drink-name-en">Faluda</div>
+              <span class="drink-badge">★ 人気</span>
+            </div>
+            <div class="drink-price">¥750</div>
+          </div>
+          <div class="drink-item">
+            <div>
+              <div class="drink-name-ja">マンゴーラッシー</div>
+              <div class="drink-name-en">Mango Lassi</div>
+              <span class="drink-badge">★ 人気</span>
+            </div>
+            <div class="drink-price">¥500</div>
+          </div>
+          <div class="drink-item">
+            <div>
+              <div class="drink-name-ja">マンゴージュース</div>
+              <div class="drink-name-en">Mango Juice</div>
+            </div>
+            <div class="drink-price">¥500</div>
+          </div>
+          <div class="drink-item">
+            <div>
+              <div class="drink-name-ja">グアバジュース</div>
+              <div class="drink-name-en">Guava Juice</div>
+            </div>
+            <div class="drink-price">¥500</div>
+          </div>
+          <div class="drink-item">
+            <div>
+              <div class="drink-name-ja">ホット / アイスチャイ</div>
+              <div class="drink-name-en">Chai / Spice Tea</div>
+            </div>
+            <div class="drink-price">¥500</div>
+          </div>
+          <div class="drink-item">
+            <div>
+              <div class="drink-name-ja">コーヒー・紅茶・コーラ</div>
+              <div class="drink-name-en">Coffee / Tea / Cola</div>
+            </div>
+            <div class="drink-price">¥400</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== DRINK SET BANNER ========== -->
+  <div id="drinkset">
+    <div class="container">
+      <div class="drinkset-banner fade-up">
+        <div class="drinkset-text">
+          <p class="label">Drink Set Option</p>
+          <h3 class="drinkset-title">食事に <strong>+¥200</strong> で<br />ドリンクセットに！</h3>
+          <p style="font-size:14px; color:rgba(255,255,255,0.65);">お食事メニューにドリンクをプラスしてお得に楽しもう。</p>
+          <div class="drinkset-drinks">
+            <span>コーヒー</span><span>紅茶</span><span>コーラ</span>
+            <span>マンゴーラッシー</span><span>マンゴージュース</span>
+            <span>グアバジュース</span><span>アイスチャイ</span>
+            <span>ホットチャイ</span><span>スパイスティ</span>
+          </div>
+        </div>
+        <a href="#access" class="btn btn-primary" style="flex-shrink:0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          お店へ行く
         </a>
-      </nav>
-    </div>
-  </header>
-
-  <!-- Hero -->
-  <section class="hero" aria-label="Hero">
-    <picture>
-      <source srcset="./assets/images/hero/hero-desktop-2.jpg" media="(min-width: 768px)">
-      <img src="./assets/images/hero/hero-desktop-2.jpg" alt="スリランカ料理の美しい盛り付け" loading="eager">
-    </picture>
-    <div class="hero__overlay"></div>
-    <div class="container hero__content">
-      <h1 class="display">心と体に響く、スリランカの本格スパイス料理</h1>
-      <p>アーユルヴェーダのエッセンスを取り入れ、本場のオーガニックスパイスと旬の食材で仕立てた一皿を。</p>
-      <div class="hero__actions">
-        <a href="#menu" class="btn btn--primary">おすすめメニュー</a>
-        <a href="https://www.ubereats.com/jp/store/%E3%82%B5%E3%80%82%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%9B-%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3-the-colombo-srilankan-restaurant/G0wdS591S9yXFTJcmyQX0g?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNiVBMCU4NCVFRiVCQyU5NCVFNCVCOCU4MSVFNyU5QiVBRSVFRiVCQyU5NSVFMiU4OCU5MiVFRiVCQyU5NiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpCNWZtZDlCd0EyQVJucnZuRTZMOUNmTSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzNS4xNjkwNTQxJTJDJTIybG9uZ2l0dWRlJTIyJTNBMTM2LjkxMjUyMTElN0Q%3D&ps=1&surfaceName=" target="_blank" rel="noopener" class="order-link" aria-label="UberEatsで注文">
-          <img src="./assets/images/logos/ubereats-logo-h-black-on-white.png" alt="UberEatsで注文" />
-        </a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- About / Concept -->
-  <section id="about" class="section section--about">
-    <div class="container grid two">
-      <div class="about__text">
-        <h2 class="headline">スリランカの“日常”を、大須で。</h2>
-        <p>スリランカ出身のシェフが腕をふるう、心と体にやさしい本場のスリランカ料理をご提供しています。</p>
-        <p>アーユルヴェーダの考えが根づいたスリランカの食文化では、「食べること」が健康への第一歩。
-        本場のオーガニックスパイスと香り高いハーブを絶妙に組み合わせ、体を整え、心までほっと癒すような料理をお届けします。</p>
-        <p>本場の味をそのままに、どこか懐かしく、毎日でも食べたくなるような優しい一皿を、ぜひご体感ください。</p>
-      </div>
-      <div class="about__image-wrap">
-        <img src="./assets/images/about/ayurveda-oneplate.jpg" alt="アーユルヴェーダのワンプレート" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Menu Highlights -->
-  <section id="menu" class="section section--menu">
+  <!-- ========== ACCESS ========== -->
+  <section id="access">
     <div class="container">
-      <div class="section__header">
-        <h2 class="headline">おすすめメニュー</h2>
-        <p>色と香りで楽しむ、スリランカの定番と郷土料理。</p>
+      <div style="text-align:center; max-width:600px; margin:0 auto;">
+        <p class="section-label fade-up">Access</p>
+        <h2 class="section-title fade-up fade-up-delay-1">アクセス</h2>
+        <p class="section-sub fade-up fade-up-delay-2">大須観音駅から徒歩3分。お気軽にお立ち寄りください。</p>
       </div>
-      <div class="cards grid three">
-        <article class="card">
-          <img src="./assets/images/menu/lamprais-1200.jpg" 
-               srcset="./assets/images/menu/lamprais-800.jpg 800w, ./assets/images/menu/lamprais-1200.jpg 1200w, ./assets/images/menu/lamprais-1600.jpg 1600w" 
-               sizes="(min-width:980px) 33vw, (min-width:680px) 50vw, 100vw"
-               alt="ランプライス（Lamprais）" loading="lazy" />
-          <div class="card__body">
-            <h3>ランプライス - Lamprais</h3>
-            <p>バナナの葉に包まれた、スリランカの特別なごちそう。数種類のおかずとスパイスライスを包み蒸すことで、香りと旨みが凝縮します。</p>
+
+      <div class="access-grid">
+        <div class="map-wrap fade-up">
+          <iframe
+            src="https://maps.google.com/maps?q=ZA+COLOMBO+%E5%90%8D%E5%8F%A4%E5%B1%8B+%E5%A4%A7%E9%A0%88&output=embed&hl=ja&z=17"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="ZA COLOMBO 地図"
+          ></iframe>
+        </div>
+        <div class="access-info fade-up fade-up-delay-2">
+          <div class="info-block">
+            <div class="info-icon">📍</div>
+            <div>
+              <div class="info-label">住所</div>
+              <div class="info-value">〒460-0011<br />愛知県名古屋市中区大須2丁目-1-41<br />Tsukamoto Building 1F</div>
+            </div>
           </div>
-        </article>
-        <article class="card">
-          <img src="./assets/images/menu/ayurveda-oneplate-1200.jpg" 
-               srcset="./assets/images/menu/ayurveda-oneplate-800.jpg 800w, ./assets/images/menu/ayurveda-oneplate-1200.jpg 1200w, ./assets/images/menu/ayurveda-oneplate-1600.jpg 1600w"
-               sizes="(min-width:980px) 33vw, (min-width:680px) 50vw, 100vw"
-               alt="アーユルヴェーダ ワンプレート" loading="lazy" />
-          <div class="card__body">
-            <h3>アーユルヴェーダ ワンプレート - Ayurveda Oneplate</h3>
-            <p>アーユルヴェーダの知恵をベースにオーガニックスパイスをふんだんに使用。一皿で体を整え、心まで満たしてくれる体にうれしいワンプレート。</p>
+          <div class="info-block">
+            <div class="info-icon">🚉</div>
+            <div>
+              <div class="info-label">最寄駅</div>
+              <div class="info-value">大須観音駅より徒歩3分<br />上前津駅より徒歩8分</div>
+            </div>
           </div>
-        </article>
-        <article class="card">
-          <img src="./assets/images/menu/string-hopper-kottu-1200.jpg" 
-               srcset="./assets/images/menu/string-hopper-kottu-800.jpg 800w, ./assets/images/menu/string-hopper-kottu-1200.jpg 1200w, ./assets/images/menu/string-hopper-kottu-1600.jpg 1600w"
-               sizes="(min-width:980px) 33vw, (min-width:680px) 50vw, 100vw"
-               alt="ストリングホッパーコットゥ" loading="lazy" />
-          <div class="card__body">
-            <h3>ストリングホッパーコットゥ - String Hopper Kottu</h3>
-            <p>米粉の蒸し麺「ストリングホッパー」をスパイシーに炒めた定番家庭料理。モチモチの麺とスパイスの香りがクセになる、やみつき必至の味わいです。</p>
+          <div class="info-block">
+            <div class="info-icon">🕐</div>
+            <div>
+              <div class="info-label">営業時間</div>
+              <div class="info-value">11:00 〜 22:00</div>
+            </div>
           </div>
-        </article>
+          <div class="info-block">
+            <div class="info-icon">📅</div>
+            <div>
+              <div class="info-label">定休日</div>
+              <div class="info-value"><span class="closed">火曜日</span></div>
+            </div>
+          </div>
+          <div class="access-cta">
+            <a
+              href="https://maps.google.com/?q=愛知県名古屋市中区大須2丁目-1-41"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-green"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+              Google マップで開く
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Gallery -->
-  <section id="gallery" class="section section--gallery">
+  <!-- ========== FOOTER ========== -->
+  <footer>
     <div class="container">
-      <div class="section__header">
-        <h2 class="headline">ギャラリー</h2>
-        <p>季節の一皿や店内の雰囲気をご紹介します。</p>
-      </div>
-      <div class="masonry">
-        <img src="./assets/images/gallery/tea-2776217_1280.jpg" alt="セイロンティー" style="aspect-ratio: 4 / 3; width: 100%; height: auto; object-fit: cover;" />
-        <img src="./assets/images/gallery/exterior-1.JPG" alt="店舗外観" style="aspect-ratio: 4 / 3; width: 100%; height: auto; object-fit: cover;" />
-        <img src="./assets/images/gallery/Interior.JPG" alt="店舗内観" style="aspect-ratio: 4 / 3; width: 100%; height: auto; object-fit: cover;" />
-      </div>
-    </div>
-  </section>
-
-  <!-- Delivery CTA -->
-  <section class="section" aria-label="デリバリー">
-    <div class="container" style="text-align:center">
-      <h2 class="headline">ご自宅でも ZA COLOMBO を</h2>
-      <p class="small" style="margin:0 0 14px;color:var(--muted)">出来たての味をそのままお届けします。</p>
-      <a class="order-link" href="https://www.ubereats.com/jp/store/%E3%82%B5%E3%80%82%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%9B-%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3-the-colombo-srilankan-restaurant/G0wdS591S9yXFTJcmyQX0g?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNiVBMCU4NCVFRiVCQyU5NCVFNCVCOCU4MSVFNyU5QiVBRSVFRiVCQyU5NSVFMiU4OCU5MiVFRiVCQyU5NiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpCNWZtZDlCd0EyQVJucnZuRTZMOUNmTSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzNS4xNjkwNTQxJTJDJTIybG9uZ2l0dWRlJTIyJTNBMTM2LjkxMjUyMTElN0Q%3D&ps=1&surfaceName=" target="_blank" rel="noopener" aria-label="UberEatsで注文">
-        <img src="./assets/images/logos/ubereats-logo-h-black-on-white.png" alt="UberEatsで注文" />
-      </a>
-    </div>
-  </section>
-
-  <!-- Access / Map -->
-  <section class="section section--map" aria-label="アクセス">
-    <div class="container">
-      <div class="section__header">
-        <h2 class="headline">アクセス</h2>
-      </div>
-      <ul class="info" style="margin-bottom:18px">
-        <li>店名：ZA COLOMBO</li>
-        <li>住所：愛知県名古屋市中区大須2-1-41 塚本ビル1F</li>
-        <li>営業時間：11:00 - 22:00</li>
-        <li>定休日：火曜日</li>
-      </ul>
-      <div class="map-wrap">
-        <iframe title="ZA COLOMBO アクセスマップ" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1630.8984394926406!2d136.8986642283017!3d35.16168616886324!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x600377e702d4dae5%3A0x3839677d5c7d1571!2sZA%20COLOMBO!5e0!3m2!1sja!2sjp!4v1754654947784!5m2!1sja!2sjp" width="800" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer class="site-footer">
-    <div class="container footer-inner">
-      <div class="footer-brand">
-        <span class="logo-text">ZA COLOMBO</span>
-        <p class="small"> 2025 ZA COLOMBO Sri Lankan Restaurant</p>
-      </div>
-      <nav class="footer-nav">
-        <a href="#about">コンセプト</a>
-        <a href="#menu">メニュー</a>
-        <a href="https://www.ubereats.com/jp/store/%E3%82%B5%E3%80%82%E3%82%B3%E3%83%AD%E3%83%B3%E3%83%9B-%E3%82%B9%E3%83%AA%E3%83%A9%E3%83%B3%E3%82%AB%E3%83%AC%E3%82%B9%E3%83%88%E3%83%A9%E3%83%B3-the-colombo-srilankan-restaurant/G0wdS591S9yXFTJcmyQX0g?diningMode=DELIVERY&pl=JTdCJTIyYWRkcmVzcyUyMiUzQSUyMiVFNiVBMCU4NCVFRiVCQyU5NCVFNCVCOCU4MSVFNyU5QiVBRSVFRiVCQyU5NSVFMiU4OCU5MiVFRiVCQyU5NiUyMiUyQyUyMnJlZmVyZW5jZSUyMiUzQSUyMkNoSUpCNWZtZDlCd0EyQVJucnZuRTZMOUNmTSUyMiUyQyUyMnJlZmVyZW5jZVR5cGUlMjIlM0ElMjJnb29nbGVfcGxhY2VzJTIyJTJDJTIybGF0aXR1ZGUlMjIlM0EzNS4xNjkwNTQxJTJDJTIybG9uZ2l0dWRlJTIyJTNBMTM2LjkxMjUyMTElN0Q%3D&ps=1&surfaceName=" target="_blank" rel="noopener">UberEats</a>
-        <a href="#">プライバシー</a>
-      </nav>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram" class="social">Instagram</a>
-        <a href="#" aria-label="Facebook" class="social">Facebook</a>
+      <div class="footer-inner">
+        <div class="footer-logo">ZA COLOMBO</div>
+        <div class="footer-tagline">Sri Lankan Café Restaurant · Nagoya Osu</div>
+        <div class="footer-divider"></div>
+        <div class="footer-info">
+          愛知県名古屋市中区大須2丁目-1-41 Tsukamoto Building 1F<br />
+          営業時間：11:00〜22:00 　定休日：火曜日
+        </div>
+        <p class="footer-copy">© 2025 ZA COLOMBO All rights reserved.</p>
       </div>
     </div>
   </footer>
-  <!-- GA4: UberEats link click tracking -->
+
+  <!-- ========== SCRIPTS ========== -->
   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const links = document.querySelectorAll("a[href*='ubereats.com']");
-      links.forEach(a => {
-        a.addEventListener('click', () => {
-          const pos = a.closest('footer') ? 'footer' :
-                      a.closest('.hero') ? 'hero' :
-                      a.closest('nav') ? 'header' : 'other';
-          if (typeof gtag === 'function') {
-            gtag('event', 'click', {
-              event_category: 'engagement',
-              event_label: 'ubereats_link',
-              link_position: pos,
-              transport_type: 'beacon'
-            });
-          }
-        });
+    // Navbar scroll effect
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      navbar.classList.toggle('scrolled', window.scrollY > 60);
+    }, { passive: true });
+
+    // Scroll fade-in (Intersection Observer)
+    const fadeEls = document.querySelectorAll('.fade-up');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
+    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    fadeEls.forEach(el => observer.observe(el));
+
+    // Hamburger (mobile)
+    document.getElementById('hamburger').addEventListener('click', () => {
+      alert('モバイルメニューは実装中です');
     });
   </script>
 </body>
